@@ -19,7 +19,7 @@ NEWSPIDER_MODULE = 'AutoHome_Price_Spider.spiders'
 #USER_AGENT = 'AutoHome_Price_Spider (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
