@@ -10,19 +10,31 @@
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 
 BOT_NAME = 'AutoHome_Price_Spider'
+LOG_LEVEL = 'ERROR'  # 存储error日志
 
 SPIDER_MODULES = ['AutoHome_Price_Spider.spiders']
 NEWSPIDER_MODULE = 'AutoHome_Price_Spider.spiders'
 
+CONNECTION_STRING_CHEXUN = "mssql+pymssql://spider:ASdf1234@sqldev02\sql/BDCI_AUTOHOME_new"
+
+DATABASE_SERVER_NAME = "sqldev02\sql"
+DATABASE_USER_NAME = "dtc"
+DATABASE_USER_PASSWORD = "asdf1234"
+DATABASE_NAME = 'BDCI_AUTOHOME_new'
+DATABASE_HOST = '172.16.0.117'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'AutoHome_Price_Spider (+http://www.yourdomain.com)'
+USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.115 Safari/537.36'
+
+STAR_SPIDER_NAME = 'Price_Spider'
+
+INTO_SQL = 1  # 设置是否启动sql写入 ‘1’ 为启动
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-#CONCURRENT_REQUESTS = 32
+CONCURRENT_REQUESTS = 32
 
 # Configure a delay for requests for the same website (default: 0)
 # See http://scrapy.readthedocs.org/en/latest/topics/settings.html#download-delay
@@ -64,9 +76,9 @@ ROBOTSTXT_OBEY = False
 
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'AutoHome_Price_Spider.pipelines.AutohomePriceSpiderPipeline': 300,
-#}
+ITEM_PIPELINES = {
+   'AutoHome_Price_Spider.pipelines.AutohomePriceSpiderPipeline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html

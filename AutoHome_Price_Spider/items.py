@@ -8,7 +8,15 @@
 import scrapy
 
 
-class AutohomePriceSpiderItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+class ChexunSpiderPriceItem(scrapy.Item):
+    appversion = scrapy.Field()
+    spec_name = scrapy.Field()
+    mileage = scrapy.Field()
+    reg_date = scrapy.Field()
+    price = scrapy.Field()
+    grade = scrapy.Field()
+    q0 = scrapy.Field()
+    q1 = scrapy.Field()
+    q2 = scrapy.Field()
+    q3 = scrapy.Field()
+    q4 = scrapy.Field()
