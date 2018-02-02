@@ -10,10 +10,10 @@ import scrapy
 
 class ChexunSpiderPriceItem(scrapy.Item):
     appversion = scrapy.Field()
-    spec_name = scrapy.Field()
+    spec_id = scrapy.Field()
     mileage = scrapy.Field()
     reg_date = scrapy.Field()
-    price = scrapy.Field()
+    # price = scrapy.Field()
     grade = scrapy.Field()
     q0 = scrapy.Field()
     q1 = scrapy.Field()

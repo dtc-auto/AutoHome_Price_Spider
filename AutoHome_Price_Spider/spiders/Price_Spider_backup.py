@@ -42,7 +42,7 @@ class UrlSpiderSpider(scrapy.Spider):
                             print(e)
 
     start_urls = get_start_url(data)
-    name = "Price_Spider"
+    name = "Price_Spider_backup"
 
 
     def parse(self, response):

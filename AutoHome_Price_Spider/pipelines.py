@@ -43,10 +43,10 @@ class AutohomePriceSpiderPipeline(object):
             cur = self.conn.cursor()
             self.conn.autocommit(True)
             appversion=item['appversion']
-            spec_name=item['spec_name']
+            spec_id=item['spec_id']
             mileage=item['mileage']
             reg_date=item['reg_date']
-            price=item['price']
+            # price=item['price']
             grade=item['grade']
             q0=item['q0']
             q1=item['q1']
@@ -56,9 +56,9 @@ class AutohomePriceSpiderPipeline(object):
 
 
             cur.execute("""INSERT INTO [BDCI_AUTOHOME_new].[src].[AutoHome_Price]
-                            (appversion, spec_name, mileage, reg_date, price, grade, q0, q1, q2, q3, q4)
-                        VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"""
-                        , (appversion, spec_name, mileage, reg_date, price, grade, q0, q1, q2, q3, q4))
+                            (appversion, spec_id, mileage, reg_date, grade, q0, q1, q2, q3, q4)
+                        VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"""
+                        , (appversion, spec_id, mileage, reg_date, grade, q0, q1, q2, q3, q4))
 
             self.conn.autocommit(False)
             self.conn.commit()
