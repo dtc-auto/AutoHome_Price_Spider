@@ -10,7 +10,7 @@
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 
 BOT_NAME = 'AutoHome_Price_Spider'
-LOG_LEVEL = 'ERROR'  # 存储error日志
+# LOG_LEVEL = 'ERROR'  # 存储error日志
 
 SPIDER_MODULES = ['AutoHome_Price_Spider.spiders']
 NEWSPIDER_MODULE = 'AutoHome_Price_Spider.spiders'
